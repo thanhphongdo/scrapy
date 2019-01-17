@@ -1,0 +1,409 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>parse-server-example</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="assets/js/search.js" data-base=".">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="index.html" class="title">parse-server-example</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+							<input type="checkbox" id="tsd-filter-only-exported" />
+							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="globals.html">Globals</a>
+				</li>
+			</ul>
+			<h1> parse-server-example</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<div class="tsd-panel tsd-typography">
+				<h1 id="parse-server-example">parse-server-example</h1>
+				<p>Example project using the <a href="https://github.com/ParsePlatform/parse-server">parse-server</a> module on Express.</p>
+				<p>Read the full Parse Server guide here: <a href="https://github.com/ParsePlatform/parse-server/wiki/Parse-Server-Guide">https://github.com/ParsePlatform/parse-server/wiki/Parse-Server-Guide</a></p>
+				<h3 id="for-local-development">For Local Development</h3>
+				<ul>
+					<li>Make sure you have at least Node 4.3. <code>node --version</code></li>
+					<li>Clone this repo and change directory to it.</li>
+					<li><code>npm install</code></li>
+					<li>Install mongo locally using <a href="http://docs.mongodb.org/master/tutorial/install-mongodb-on-os-x/">http://docs.mongodb.org/master/tutorial/install-mongodb-on-os-x/</a></li>
+					<li>Run <code>mongo</code> to connect to your database, just to make sure it&#39;s working. Once you see a mongo prompt, exit with Control-D</li>
+					<li>Run the server with: <code>npm start</code></li>
+					<li>By default it will use a path of /parse for the API routes.  To change this, or use older client SDKs, run <code>export PARSE_MOUNT=/1</code> before launching the server.</li>
+					<li>You now have a database named &quot;dev&quot; that contains your Parse data</li>
+					<li>Install ngrok and you can test with devices</li>
+				</ul>
+				<h3 id="getting-started-with-heroku-mlab-development">Getting Started With Heroku + mLab Development</h3>
+				<h4 id="with-the-heroku-button">With the Heroku Button</h4>
+				<p><a href="https://heroku.com/deploy"><img src="https://www.herokucdn.com/deploy/button.png" alt="Deploy"></a></p>
+				<h4 id="without-it">Without It</h4>
+				<ul>
+					<li>Clone the repo and change directory to it</li>
+					<li>Log in with the <a href="https://toolbelt.heroku.com/">Heroku Toolbelt</a> and create an app: <code>heroku create</code></li>
+					<li>Use the <a href="https://elements.heroku.com/addons/mongolab">mLab addon</a>: <code>heroku addons:create mongolab:sandbox --app YourAppName</code></li>
+					<li>By default it will use a path of /parse for the API routes.  To change this, or use older client SDKs, run <code>heroku config:set PARSE_MOUNT=/1</code></li>
+					<li>Deploy it with: <code>git push heroku master</code></li>
+				</ul>
+				<h3 id="getting-started-with-aws-elastic-beanstalk">Getting Started With AWS Elastic Beanstalk</h3>
+				<h4 id="with-the-deploy-to-aws-button">With the Deploy to AWS Button</h4>
+				<p><a title="Deploy to AWS" href="https://console.aws.amazon.com/elasticbeanstalk/home?region=us-west-2#/newApplication?applicationName=ParseServer&solutionStackName=Node.js&tierName=WebServer&sourceBundleUrl=https://s3.amazonaws.com/elasticbeanstalk-samples-us-east-1/eb-parse-server-sample/parse-server-example.zip" target="_blank"><img src="http://d0.awsstatic.com/product-marketing/Elastic%20Beanstalk/deploy-to-aws.png" height="40"></a></p>
+				<h4 id="without-it">Without It</h4>
+				<ul>
+					<li>Clone the repo and change directory to it</li>
+					<li>Log in with the <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb-cli3-install.html">AWS Elastic Beanstalk CLI</a>, select a region, and create an app: <code>eb init</code></li>
+					<li>Create an environment and pass in MongoDB URI, App ID, and Master Key: <code>eb create --envvars DATABASE_URI=&lt;replace with URI&gt;,APP_ID=&lt;replace with Parse app ID&gt;,MASTER_KEY=&lt;replace with Parse master key&gt;</code></li>
+				</ul>
+				<h3 id="getting-started-with-microsoft-azure-app-service">Getting Started With Microsoft Azure App Service</h3>
+				<h4 id="with-the-deploy-to-azure-button">With the Deploy to Azure Button</h4>
+				<p><a href="https://portal.azure.com/#create/Microsoft.ParseServer"><img src="http://azuredeploy.net/deploybutton.png" alt="Deploy to Azure"></a></p>
+				<p>Detailed information is available here:</p>
+				<ul>
+					<li><a href="https://azure.microsoft.com/en-us/marketplace/partners/microsoft/parseserver/">Parse Server with Azure Managed Services</a></li>
+					<li><a href="https://azure.microsoft.com/en-us/blog/announcing-the-publication-of-parse-server-with-azure-managed-services/">Parse Server Azure Blog Post</a></li>
+				</ul>
+				<h3 id="getting-started-with-google-app-engine">Getting Started With Google App Engine</h3>
+				<ol>
+					<li>Clone the repo and change directory to it </li>
+					<li>Create a project in the <a href="https://console.cloud.google.com/">Google Cloud Platform Console</a>.</li>
+					<li><a href="https://console.cloud.google.com/project/_/settings">Enable billing</a> for your project.</li>
+					<li>Install the <a href="https://cloud.google.com/sdk/">Google Cloud SDK</a>.</li>
+					<li>Setup a MongoDB server.  You have a few options:<ol>
+							<li>Create a Google Compute Engine virtual machine with <a href="https://cloud.google.com/launcher/?q=mongodb">MongoDB pre-installed</a>.</li>
+							<li>Use <a href="https://mlab.com/google/">mLab</a> to create a free MongoDB deployment on Google Cloud Platform (only US-central).</li>
+						</ol>
+					</li>
+					<li>Modify <code>app.yaml</code> to update your environment variables.</li>
+					<li>Delete <code>Dockerfile</code></li>
+					<li>Deploy it with <code>gcloud preview app deploy</code></li>
+				</ol>
+				<p>A detailed tutorial is available here:
+				<a href="https://cloud.google.com/nodejs/resources/frameworks/parse-server">Running Parse server on Google App Engine</a></p>
+				<h3 id="getting-started-with-scalingo">Getting Started With Scalingo</h3>
+				<h4 id="with-the-scalingo-button">With the Scalingo button</h4>
+				<p><a href="https://my.scalingo.com/deploy"><img src="https://cdn.scalingo.com/deploy/button.svg" alt="Deploy to Scalingo"></a></p>
+				<h4 id="without-it">Without it</h4>
+				<ul>
+					<li>Clone the repo and change directory to it</li>
+					<li>Log in with the <a href="http://cli.scalingo.com/">Scalingo CLI</a> and create an app: <code>scalingo create my-parse</code></li>
+					<li>Use the <a href="https://scalingo.com/addons/scalingo-mongodb">Scalingo MongoDB addon</a>: <code>scalingo addons-add scalingo-mongodb free</code></li>
+					<li>Setup MongoDB connection string: <code>scalingo env-set DATABASE_URI=&#39;$SCALINGO_MONGO_URL&#39;</code></li>
+					<li>By default it will use a path of /parse for the API routes. To change this, or use older client SDKs, run <code>scalingo env-set PARSE_MOUNT=/1</code></li>
+					<li>Deploy it with: <code>git push scalingo master</code></li>
+				</ul>
+				<h3 id="getting-started-with-openshift-online-next-gen-">Getting Started With OpenShift Online (Next Gen)</h3>
+				<ol>
+					<li>Register for a free <a href="http://www.openshift.com/devpreview/register.html">OpenShift Online (Next Gen) account</a></li>
+					<li>Create a project in the <a href="https://console.preview.openshift.com/console/">OpenShift Online Console</a>.</li>
+					<li>Install the <a href="https://docs.openshift.com/online/getting_started/beyond_the_basics.html#btb-installing-the-openshift-cli">OpenShift CLI</a>.</li>
+					<li>Add the Parse Server template to your project: <code>oc create -f https://raw.githubusercontent.com/ParsePlatform/parse-server-example/master/openshift.json</code></li>
+					<li>Deploy Parse Server from the web console<ol>
+							<li>Open your project in the <a href="https://console.preview.openshift.com/console/">OpenShift Online Console</a>:</li>
+							<li>Click <strong>Add to Project</strong> from the top navigation</li>
+							<li>Scroll down and select <strong>NodeJS &gt; Parse Server</strong></li>
+							<li>(Optionally) Update the Parse Server settings (parameters)</li>
+							<li>Click <strong>Create</strong></li>
+						</ol>
+					</li>
+				</ol>
+				<p>A detailed tutorial is available here:
+				<a href="https://blog.openshift.com/parse-server/">Running Parse Server on OpenShift Online (Next Gen)</a></p>
+				<h1 id="using-it">Using it</h1>
+				<p>Before using it, you can access a test page to verify if the basic setup is working fine <a href="http://localhost:1337/test">http://localhost:1337/test</a>.
+				Then you can use the REST API, the JavaScript SDK, and any of our open-source SDKs:</p>
+				<p>Example request to a server running locally:</p>
+				<pre><code class="language-curl">curl -X POST \
+  -H &quot;X-Parse-Application-Id: myAppId&quot; \
+  -H &quot;Content-Type: application/json&quot; \
+  -d &#39;{&quot;score&quot;:1337,&quot;playerName&quot;:&quot;Sean Plott&quot;,&quot;cheatMode&quot;:false}&#39; \
+  http://localhost:1337/parse/classes/GameScore
+
+curl -X POST \
+  -H &quot;X-Parse-Application-Id: myAppId&quot; \
+  -H &quot;Content-Type: application/json&quot; \
+  -d &#39;{}&#39; \
+  http://localhost:1337/parse/functions/hello</code></pre>
+				<p>Example using it via JavaScript:</p>
+				<pre><code class="language-javascript">Parse.initialize(<span class="hljs-string">'myAppId'</span>,<span class="hljs-string">'unused'</span>);
+Parse.serverURL = <span class="hljs-string">'https://whatever.herokuapp.com'</span>;
+
+<span class="hljs-keyword">var</span> obj = <span class="hljs-keyword">new</span> Parse.Object(<span class="hljs-string">'GameScore'</span>);
+obj.set(<span class="hljs-string">'score'</span>,<span class="hljs-number">1337</span>);
+obj.save().then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">obj</span>) </span>{
+  <span class="hljs-built_in">console</span>.log(obj.toJSON());
+  <span class="hljs-keyword">var</span> query = <span class="hljs-keyword">new</span> Parse.Query(<span class="hljs-string">'GameScore'</span>);
+  query.get(obj.id).then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">objAgain</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(objAgain.toJSON());
+  }, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">err</span>) </span>{<span class="hljs-built_in">console</span>.log(err); });
+}, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">err</span>) </span>{ <span class="hljs-built_in">console</span>.log(err); });</code></pre>
+				<p>Example using it on Android:</p>
+				<pre><code class="language-java"><span class="hljs-comment">//in your application class</span>
+
+Parse.initialize(<span class="hljs-keyword">new</span> Parse.Configuration.Builder(getApplicationContext())
+  .applicationId(<span class="hljs-string">"myAppId"</span>)
+  .server(<span class="hljs-string">"http://myServerUrl/parse/"</span>)   <span class="hljs-comment">// '/' important after 'parse'</span>
+  .build());
+
+ParseObject testObject = <span class="hljs-keyword">new</span> ParseObject(<span class="hljs-string">"TestObject"</span>);
+testObject.put(<span class="hljs-string">"foo"</span>, <span class="hljs-string">"bar"</span>);
+testObject.saveInBackground();</code></pre>
+				<p>Example using it on iOS (Swift):</p>
+				<pre><code class="language-swift"><span class="hljs-comment">//in your AppDelegate</span>
+
+<span class="hljs-type">Parse</span>.initializeWithConfiguration(<span class="hljs-type">ParseClientConfiguration</span>(block: { (configuration: <span class="hljs-type">ParseMutableClientConfiguration</span>) -&gt; <span class="hljs-type">Void</span> <span class="hljs-keyword">in</span>
+  configuration.server = <span class="hljs-string">"https://&lt;# Your Server URL #&gt;/parse/"</span> <span class="hljs-comment">// '/' important after 'parse'</span>
+  configuration.applicationId = <span class="hljs-string">"&lt;# Your APP_ID #&gt;"</span>
+}))</code></pre>
+				<p>You can change the server URL in all of the open-source SDKs, but we&#39;re releasing new builds which provide initialization time configuration of this property.</p>
+				<p>As of April 5, 2017, Parse, LLC has transferred this code to the parse-community organization, and will no longer be contributing to or distributing this code.</p>
+				<h3 id="make-document-with-typedoc">Make document with typedoc</h3>
+				<p>typedoc --target ES5 --out ./doc/ ./src/</p>
+			</div>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class="globals  ">
+						<a href="globals.html"><em>Globals</em></a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_cloud_learning_source_.html">"cloud/learning_<wbr>source"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_cloud_level_.html">"cloud/level"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_cloud_main_.html">"cloud/main"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_cloud_post_.html">"cloud/post"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_cloud_topic_.html">"cloud/topic"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_cloud_word_.html">"cloud/word"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_config_config_.html">"config/config"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_config_config_debug_.html">"config/config.debug"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_config_config_dev_.html">"config/config.dev"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_config_config_prod_.html">"config/config.prod"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_config_config_interface_.html">"config/config_<wbr>interface"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_config_index_.html">"config/index"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_index_.html">"index"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_model_database_model_index_.html">"model/database_<wbr>model/index"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_model_database_model_learning_source_.html">"model/database_<wbr>model/learning_<wbr>source"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_model_database_model_learning_word_.html">"model/database_<wbr>model/learning_<wbr>word"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_model_database_model_level_.html">"model/database_<wbr>model/level"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_model_database_model_post_.html">"model/database_<wbr>model/post"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_model_database_model_source_.html">"model/database_<wbr>model/source"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_model_database_model_topic_.html">"model/database_<wbr>model/topic"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_model_database_model_user_.html">"model/database_<wbr>model/user"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_model_database_model_word_.html">"model/database_<wbr>model/word"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_model_index_.html">"model/index"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_model_request_model_index_.html">"model/request_<wbr>model/index"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_model_request_model_request_learning_source_.html">"model/request_<wbr>model/request_<wbr>learning_<wbr>source"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_model_request_model_request_level_.html">"model/request_<wbr>model/request_<wbr>level"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_model_request_model_request_list_base_.html">"model/request_<wbr>model/request_<wbr>list_<wbr>base"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_model_request_model_request_list_level_.html">"model/request_<wbr>model/request_<wbr>list_<wbr>level"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_model_request_model_request_list_post_.html">"model/request_<wbr>model/request_<wbr>list_<wbr>post"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_model_request_model_request_list_topic_.html">"model/request_<wbr>model/request_<wbr>list_<wbr>topic"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_model_request_model_request_topic_.html">"model/request_<wbr>model/request_<wbr>topic"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_model_request_model_request_word_.html">"model/request_<wbr>model/request_<wbr>word"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_model_response_model_index_.html">"model/response_<wbr>model/index"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_model_response_model_response_list_base_.html">"model/response_<wbr>model/response_<wbr>list_<wbr>base"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_model_response_model_response_list_post_.html">"model/response_<wbr>model/response_<wbr>list_<wbr>post"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_parse_cloud_function_base_.html">"parse/cloud_<wbr>function_<wbr>base"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_parse_index_.html">"parse/index"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_parse_parse_object_base_.html">"parse/parse_<wbr>object_<wbr>base"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_parse_parse_query_base_.html">"parse/parse_<wbr>query_<wbr>base"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_text_to_speech_index_.html">"text_<wbr>to_<wbr>speech/index"</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-module"><span class="tsd-kind-icon">Module</span></li>
+				<li class="tsd-kind-object-literal"><span class="tsd-kind-icon">Object literal</span></li>
+				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
+				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
+				<li class="tsd-kind-enum-member"><span class="tsd-kind-icon">Enumeration member</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-enum"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-enum"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+				<li class="tsd-kind-interface tsd-has-type-parameter"><span class="tsd-kind-icon">Interface with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-interface"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-interface"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-index-signature tsd-parent-kind-interface"><span class="tsd-kind-icon">Index signature</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class"><span class="tsd-kind-icon">Accessor</span></li>
+				<li class="tsd-kind-index-signature tsd-parent-kind-class"><span class="tsd-kind-icon">Index signature</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li>
+				<li class="tsd-kind-call-signature tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="http://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="assets/js/main.js"></script>
+<script>if (location.protocol == 'file:') document.write('<script src="assets/js/search.js"><' + '/script>');</script>
+</body>
+</html>

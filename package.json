@@ -1,0 +1,42 @@
+{
+  "name": "parse-server-example",
+  "version": "1.4.0",
+  "description": "An example Parse API server using the parse-server module",
+  "main": "build/index.js",
+  "types": "build/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ParsePlatform/parse-server-example"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@types/chai": "^4.0.4",
+    "@types/mocha": "^2.2.43",
+    "chai": "^4.1.2",
+    "coveralls": "^3.0.0",
+    "istanbul": "^0.4.5",
+    "mocha": "^4.0.1",
+    "ts-node": "^3.3.0"
+  },
+  "dependencies": {
+    "@types/express": "^4.16.0",
+    "@types/parse": "^2.1.0",
+    "express": "^4.16.4",
+    "kerberos": "~0.0.x",
+    "parse": "~1.8.0",
+    "parse-dashboard": "^1.2.0",
+    "parse-server": "*",
+    "python-shell": "^1.0.7",
+    "sharp": "^0.21.0",
+    "typedoc": "^0.11.1",
+    "typescript": "^2.9.2",
+    "watson-developer-cloud": "^3.12.0"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "build": "tsc"
+  },
+  "engines": {
+    "node": ">=4.3"
+  }
+}
