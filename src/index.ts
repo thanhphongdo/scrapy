@@ -48,23 +48,6 @@ app.get('/', function (req, res) {
     res.status(200).send('I dream of being a website.  Please star the parse-server repo on GitHub!');
 });
 
-app.get('/test-scrapy', function (req, res) {
-    let pyshell = new PythonShell('test.py', {
-        mode: 'text'
-    });
-    let output = '';
-    pyshell.stdout.on('data', function (data) {
-        output += '' + data;
-    });
-    pyshell.send('hello').send('world').end(function (err) {
-        if (err) {
-            console.log(err);
-        }
-        console.log(output);
-    });
-    res.status(200).send('I dream of being a website.  Please star the parse-server repo on GitHub!');
-});
-
 app.use(function (req, res, next) {
     console.log('Time:', Date.now())
     next()

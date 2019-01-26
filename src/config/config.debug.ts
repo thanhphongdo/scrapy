@@ -1,7 +1,7 @@
 import { ConfigInterface } from './config_interface';
 
-export var Config:ConfigInterface = {
-    parseServer:{
+export var Config: ConfigInterface = {
+    parseServer: {
         appId: 'app.id.debug',
         appName: 'app.test',
         cloud: '/cloud/main.js',
@@ -10,5 +10,8 @@ export var Config:ConfigInterface = {
         masterKey: 'masterkey',
         port: 1337,
         serverURL: 'http://localhost:1337/parse'
+    },
+    scrapy: {
+        scrapyd: 'http://localhost:6800'
     }
 }

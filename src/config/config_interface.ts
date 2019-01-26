@@ -1,4 +1,4 @@
-export interface ConfigInterface{
+export interface ConfigInterface {
     parseServer: {
         appName?: string;
         databaseURI?: string;
@@ -14,4 +14,7 @@ export interface ConfigInterface{
         maxUploadSize?: string;
     };
     [key: string]: any;
+    scrapy: {
+        scrapyd: string;
+    }
 }

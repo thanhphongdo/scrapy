@@ -1,5 +1,8 @@
 import { ConfigInterface } from './config_interface';
 
 export var Config:ConfigInterface = {
-    parseServer:{}
+    parseServer:{},
+    scrapy: {
+        scrapyd: 'http://localhost:6800'
+    }
 }

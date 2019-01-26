@@ -9,5 +9,8 @@ export var Config:ConfigInterface = {
         masterKey: 'masterkey',
         port: 1337,
         serverURL: 'http://localhost:1337/parse'
+    },
+    scrapy: {
+        scrapyd: 'http://localhost:6800'
     }
 }
